@@ -1,0 +1,26 @@
+"use strict";
+
+var ApiController = require("../Controller/Api/apiUser");
+var router = require("express").Router();
+router.post('/login', ApiController.findUserPass);
+router.get('/user/:id', ApiController.findOneUser);
+router.get('/user', ApiController.findAllUser);
+router.post('/user', ApiController.themNguoiDung);
+router.put('/user', ApiController.capNhatNguoiDung);
+router.post('/user-delete', ApiController.xoaNguoiDung);
+router.post('/thiet-bi-delete', ApiController.deleteThietBiPhong);
+router.post('/thiet-bi', ApiController.themThietBiPhong);
+router.get('/thiet-bi', ApiController.findAllThietBi);
+router.put('/thiet-bi', ApiController.capNhatThietBiPhong);
+router.get('/thiet-bi/:id', ApiController.findOneThietBi);
+router.post('/het-han', ApiController.hetHan);
+router.get('/thiet-bi-hsd', ApiController.findAllThietBiHsd);
+router.get('/thiet-bi-ph', ApiController.findAllBoMon);
+router.put('/thiet-bi-sl', ApiController.capNhatSl);
+router.get('/lich-su/:id', ApiController.findOneLichSu);
+router.post('/lich-su', ApiController.dangKyThietBiPhong);
+router.put('/lich-su', ApiController.traThietBiPhong);
+router.get('/lich-su', ApiController.findAllLichSu);
+router.get('/lich-su-u/:id', ApiController.findLichSuUser);
+router.get('/lich-su-tb/:id', ApiController.findLichSuTb);
+module.exports = router;
