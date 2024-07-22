@@ -1,12 +1,13 @@
 "use strict";
 
-var mysql = require('mysql');
+var mysql = require('mysql2');
 require('dotenv').config();
 var connection = mysql.createConnection({
-  host: process.env.HOST,
+  host: process.env.DB_HOST,
   user: process.env.USER,
   password: process.env.PASS,
-  database: process.env.DATABASE
+  database: process.env.DATABASE,
+  port: process.env.DB_PORT
 });
 connection.connect(function (err) {
   if (err) {
